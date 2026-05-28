@@ -30,6 +30,8 @@ The additive Python package `mvt.productization` exposes:
   alerts, timeline events, and reviewer notes
 - `build_run_ingestion_records` to convert normalized summaries into
   tenant-scoped artifact and alert records
+- workflow DTOs for case intake, run status, alert and timeline filters,
+  reviewer notes, and evidence export manifests
 - `build_event` for tenant-scoped event envelopes
 - `SCHEMA_SQL` and `validate_schema_contract` for the initial PostgreSQL/RLS
   storage contract
@@ -88,6 +90,21 @@ Normalized summary shape:
   "error": null
 }
 ```
+
+## Workflow Contracts
+
+Phase 3 keeps the UI/API boundary outside the MVT forensic core. The
+`mvt.productization.workflow` module defines DTOs for the first SaaS workflows:
+
+- `CaseIntakeRequest` creates linked case, device, and acquisition records from
+  one intake payload.
+- `RunStatusView` exposes run progress, artifact counts, timeline counts, and
+  alert counts in the camelCase shape expected by API clients.
+- `AlertReviewFilter` and `TimelineReviewFilter` define tenant-scoped review
+  queries with explicit limits.
+- `ReviewerNoteRequest` converts reviewer notes into tenant-scoped note records.
+- `EvidenceExportManifest` lists the raw artifact paths included in an evidence
+  bundle without copying sensitive file contents.
 
 ## SaaS Phases
 
