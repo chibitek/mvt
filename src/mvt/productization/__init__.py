@@ -7,6 +7,13 @@ from .artifacts import (
     normalize_results,
 )
 from .ingestion import RunIngestionRecords, build_run_ingestion_records
+from .mcp import (
+    MCP_TOOL_CONTRACTS,
+    MCP_TOOL_NAMES,
+    ToolContract,
+    get_tool_contract,
+    validate_tool_contracts,
+)
 from .models import (
     AcquisitionRecord,
     AlertRecord,
@@ -32,6 +39,8 @@ __all__ = [
     "CaseRecord",
     "DeviceRecord",
     "EventEnvelope",
+    "MCP_TOOL_CONTRACTS",
+    "MCP_TOOL_NAMES",
     "MVTProductizationRunner",
     "NormalizedAlert",
     "NormalizedRunSummary",
@@ -42,9 +51,12 @@ __all__ = [
     "RunnerOptions",
     "SCHEMA_SQL",
     "TimelineEventRecord",
+    "ToolContract",
     "build_event",
     "build_run_ingestion_records",
+    "get_tool_contract",
     "normalize_results",
     "validate_schema_contract",
     "validate_tenant_record",
+    "validate_tool_contracts",
 ]

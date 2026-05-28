@@ -33,6 +33,7 @@ The additive Python package `mvt.productization` exposes:
 - `build_event` for tenant-scoped event envelopes
 - `SCHEMA_SQL` and `validate_schema_contract` for the initial PostgreSQL/RLS
   storage contract
+- `MCP_TOOL_CONTRACTS` for the initial agent/tool surface
 
 Supported managed commands:
 
@@ -97,6 +98,18 @@ Normalized summary shape:
 5. Stiki auth, tenant isolation, audit events, and role gates.
 6. Mochii/Task Engine integration and MCP tools.
 7. Production hardening, retention, monitoring, and release process.
+
+## MCP Tools
+
+Initial tool names:
+
+- `list_mvt_cases`
+- `get_mvt_run`
+- `list_mvt_alerts`
+- `create_mochii_task_from_mvt_alert`
+
+All tools require `tenantId`; implementations must set database tenant context
+before reading or writing data.
 
 ## Chibitek Requirements
 
