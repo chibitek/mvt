@@ -28,6 +28,8 @@ The additive Python package `mvt.productization` exposes:
 - `normalize_results`
 - tenant-scoped domain records for cases, devices, acquisitions, runs, artifacts,
   alerts, timeline events, and reviewer notes
+- `build_run_ingestion_records` to convert normalized summaries into
+  tenant-scoped artifact and alert records
 - `build_event` for tenant-scoped event envelopes
 - `SCHEMA_SQL` and `validate_schema_contract` for the initial PostgreSQL/RLS
   storage contract

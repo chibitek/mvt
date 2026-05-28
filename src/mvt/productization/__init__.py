@@ -6,6 +6,7 @@ from .artifacts import (
     NormalizedRunSummary,
     normalize_results,
 )
+from .ingestion import RunIngestionRecords, build_run_ingestion_records
 from .models import (
     AcquisitionRecord,
     AlertRecord,
@@ -36,11 +37,13 @@ __all__ = [
     "NormalizedRunSummary",
     "PRODUCTIZATION_TABLES",
     "ReviewerNoteRecord",
+    "RunIngestionRecords",
     "RunnerInput",
     "RunnerOptions",
     "SCHEMA_SQL",
     "TimelineEventRecord",
     "build_event",
+    "build_run_ingestion_records",
     "normalize_results",
     "validate_schema_contract",
     "validate_tenant_record",
