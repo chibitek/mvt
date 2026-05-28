@@ -20,6 +20,7 @@ from .models import (
     validate_tenant_record,
 )
 from .runner import MVTProductizationRunner, RunnerInput, RunnerOptions
+from .schema import PRODUCTIZATION_TABLES, SCHEMA_SQL, validate_schema_contract
 
 __all__ = [
     "AcquisitionRecord",
@@ -33,11 +34,14 @@ __all__ = [
     "MVTProductizationRunner",
     "NormalizedAlert",
     "NormalizedRunSummary",
+    "PRODUCTIZATION_TABLES",
     "ReviewerNoteRecord",
     "RunnerInput",
     "RunnerOptions",
+    "SCHEMA_SQL",
     "TimelineEventRecord",
     "build_event",
     "normalize_results",
+    "validate_schema_contract",
     "validate_tenant_record",
 ]

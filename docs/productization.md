@@ -29,6 +29,8 @@ The additive Python package `mvt.productization` exposes:
 - tenant-scoped domain records for cases, devices, acquisitions, runs, artifacts,
   alerts, timeline events, and reviewer notes
 - `build_event` for tenant-scoped event envelopes
+- `SCHEMA_SQL` and `validate_schema_contract` for the initial PostgreSQL/RLS
+  storage contract
 
 Supported managed commands:
 
@@ -98,6 +100,9 @@ Normalized summary shape:
 
 - Stiki SSO remains the only identity path for the future SaaS surface.
 - Every tenant-scoped SaaS table needs RLS, timestamps, and `deleted_at`.
+- The initial storage contract covers `mvt_cases`, `mvt_devices`,
+  `mvt_acquisitions`, `mvt_analysis_runs`, `mvt_artifacts`, `mvt_alerts`,
+  `mvt_timeline_events`, `mvt_reviewer_notes`, and `mvt_activity_events`.
 - Event payloads must include tenant scope. `build_event` adds `tenantId` and
   rejects payloads whose tenant does not match the envelope.
 - Raw forensic artifacts are sensitive and must not be logged in application
